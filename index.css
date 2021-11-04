@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background: hsl(233, 47%, 7%);
+}
+
+main {
+  height: 100%;
+  background: hsl(233, 47%, 7%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 88px 24px;
+}
+
+.card {
+  display: flex;
+  border-radius: 8px;
+  background: hsl(244, 38%, 16%);
+  overflow: hidden;
+  max-width: 1110px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 72px;
+  padding-bottom: 59px;
+  flex: 1;
+  gap: 24px;
+}
+
+.header {
+  color: #ffffff;
+  font-size: 2.25rem;
+  line-height: calc(44 / 36);
+  font-weight: 700;
+}
+
+.accent {
+  color: hsl(277, 64%, 61%);
+}
+
+.description {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.67;
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.stats {
+  font-family: "Lexend Deca";
+  display: flex;
+  justify-content: space-between;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 2;
+  width: 100%;
+}
+
+.stat {
+  font-family: "Inter";
+  display: block;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: initial;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+
+.card-hero-wrapper {
+  position: relative;
+}
+
+.card-hero-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: hsl(277, 64%, 61%);
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+}
+
+.card-hero {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+}
+
+@media (max-width: 1050px) {
+  html,
+  body {
+    height: revert;
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    flex: 0 1 325px;
+  }
+
+  .card-content {
+    text-align: center;
+    padding: 40px 32px;
+  }
+
+  .header {
+    font-size: 1.75rem;
+    line-height: calc(32 / 28);
+  }
+
+  .description {
+    margin-bottom: 24px;
+    flex: revert;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
